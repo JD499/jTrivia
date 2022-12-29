@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JeopoaryAPI</title>
+    <!-- Bootstrap CSS -->
+    <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+          integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="style.css" rel="stylesheet">
+</head>
+<body>
+<header class="bs-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <h1>JeopardyAPI</h1>
+                <div class="row">
+                    <div class="col-md-6">
+                        <h2>28,923 Questions</h2>
+                    </div>
+                    <div class="col-md-6">
+                        <h2>5035 Categories</h2>
+                    </div>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-md-4">
+                        <p><a class="btn btn-primary btn-large" href="https://github.com/galileomir/JeopardyAPI">View On
+                            GitHub</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+<main class="container mx-auto">
+    <div class="col-md-7 mx-auto">
+        <h3>API Usage</h3>
+        <h4><a href="/api/clues?value=200&min_date=2000-12-25">/Clues</a></h4>
+        <ul>
+            <li>Url: <code>/api/clues</code></li>
+            <li>Options <small class="text-warning">All options are optional</small>:
+                <ul>
+                    <li><code>value</code>(int): the value of the clue in dollars</li>
+                    <li><code>category</code>(int): the id of the category you want to return</li>
+                    <li><code>min_date</code>(date): earliest date to show, based on original air date</li>
+                    <li><code>max_date</code>(date): latest date to show, based on original air date</li>
+                    <li><code>offset</code>(int): offsets the returned clues. Useful in pagination</li>
+                </ul>
+        </ul>
+        <h4><a href="/api/random">/Random</a></h4>
+        <ul>
+            <li>Url: <code>/api/random</code></li>
+            <li>Options:
+                <ul>
+                    <li><code>count</code>(int): amount of clues to return</li>
+                </ul>
+        </ul>
+        <h4><a href="/api/final">/Final</a></h4>
+        <p>Presents random final jeopardy question. <em>Note: all final jeopardy questions have null
+            <kbd>value</kbd></em></p>
+        <ul>
+            <li>Url: <code>/api/final</code></li>
+            <li>Options:
+                <ul>
+                    <li><code>count</code>(int): amount of clues to return</li>
+                </ul>
+        </ul>
+        <h4><a href="/api/categories?count=2">/Categories</a></h4>
+        <ul>
+            <li>Url: <code>/api/categories</code></li>
+            <li>Options:
+                <ul>
+                    <li><code>count</code>(int): amount of categories to return</li>
+                    <li><code>offset</code>(int): offsets the starting id of categories returned. Useful in pagination.
+                    </li>
+                </ul>
+        </ul>
+        <h4><a href="/api/category?id=4">/Category</a></h4>
+        <ul>
+            <li>Url: <code>/api/category</code></li>
+            <li>Options:
+                <ul>
+                    <li><code>id</code>(int): <span class="text-warning">Required</span> the ID of the category to
+                        return.
+                    </li>
+                </ul>
+        </ul>
+
+        <hr/>
+        <h3>About</h3>
+        <p>This api was built to learn express, postgres, and to support a future trivia game. Thanks to jService.io for
+            providing heavy inspiration as well as the Category and Clues data. I will be offering this free of charge,
+            on a railways instance.
+            <strong>Production use is at your own risk.</strong></p>
+    </div>
+</main>
+
+<footer class="bs-footer text-center">
+    <small>Content provided from jarchive and jService.io. All clue content &copy; jeopardy productions, inc. This is
+        not associated
+        with jeopardy productions, inc. This is not associated with jService.io </small>
+</footer>
+
+<!-- Bootstrap JavaScript -->
+<script crossorigin="anonymous"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
